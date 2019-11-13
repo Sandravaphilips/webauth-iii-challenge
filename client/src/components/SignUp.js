@@ -41,7 +41,7 @@ export default function SignUp(props) {
                 <input type='text' value={formValues.password} onChange={onInputChange} name="password" />
             </label>
 
-            <input type="submit" />
+            <button>Register</button>
         </form>
     )
 }
