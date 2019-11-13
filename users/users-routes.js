@@ -30,12 +30,14 @@ router('/login', (req, res) => {
             res.status(404).json({message: 'Sorry, we don\'t know who you are'})
         }
     })
+    .catch(err => res.status(500).json(err))
 })
 
 function generateToken(user) {
     const payload = {
       subject: user.id,
       username: user.username,
+      department: user.department
     }
     const options = {
       expiresIn: '1h',
